@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="lead mb-4" [ngClass]="{'text-light': changetxtColor}">
+      Lista
+    </h2>
+ </div>
+ <div class="d-flex justify-content-center"> 
+   <app-btn-day [day]="'seg'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'ter'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'qua'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'qui'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'sex'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'sab'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   <app-btn-day [day]="'dom'" [activeDay]="showDay" (setDay)="currentDay($event)"></app-btn-day>
+   
+ </div>
+
+

@@ -1,0 +1,65 @@
+<h1 class="title "> Editar  </h1>
+
+<div class="pt-2" mat-dialog-content> 
+    <form  #form="ngForm" (ngSubmit)="OnFormSubmit(form)" id="newTodo" class="form-group"> 
+        <div> 
+            <input class="inputText" ngModel #addTextField="ngModel" [ngModel]="todo.text" required name="text"    type="text" placeholder="Adicionar tarefa..." > 
+           
+            <select class="select" ngModel #select1="ngModel"  required name="urgent" style="margin-left: 10px;"  form="newTodo">
+              <option value="" hidden> Prioridade </option>
+              <option [ngValue]="true"> Urgente </option>
+              <option [ngValue]="false"> Normal </option>
+             
+            </select>
+            <select class="select" ngModel #select2="ngModel" required name="period" style="margin-left: 10px;" form="newTodo" >
+              <option value="" hidden> Periodo </option>
+              <option value="Manhã"> Manhã </option>
+              <option value="Tarde"> Tarde </option>
+              <option value="Noite"> Noite </option>
+            </select>
+            <select class="select" ngModel #select3="ngModel" required name="day" style="margin-left: 10px;" form="newTodo" >
+              <option value="" hidden> Dia da Semana </option>
+              <option value="all"> Todos os dias </option>
+              <option value="seg"> Segunda </option>
+              <option value="ter"> Terça </option>
+              <option value="qua"> Quarta </option>
+              <option value="qui"> Quinta </option>
+              <option value="sex"> Sexta </option>
+              <option value="sab"> Sábado </option>
+              <option value="dom"> Domingo </option>
+            </select>
+
+            <div class="d-flex flex-row-reverse pt-2 pb-2 mt-3">
+            <button type="button" style="margin-left: 10px;" (click)="close()" class="btn btn-cancel">
+                Cancelar
+            </button>
+            <button type="submit" style="margin-left: 10px;" class="btn btn-color"  >
+       
+              Salvar
+            </button>
+            </div>
+          </div>
+          <div *ngIf="addTextField.invalid && validationErrors">
+            
+            <p class="help text-danger" > Por favor, preencha o campo.</p>
+
+          </div>
+          <div *ngIf="addTextField.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select1.invalid" > Por favor, escolha a prioridade.</p>
+            
+          </div>
+          <div *ngIf="addTextField.valid && select1.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select2.invalid" > Por favor, escolha o período.</p>
+
+          </div>
+          <div *ngIf="addTextField.valid && select1.valid && select2.valid && validationErrors">
+            
+            <p class="help text-danger" *ngIf="select3.invalid" > Por favor, escolha o dia da semana.</p>
+
+          </div>
+
+
+    </form>
+</div>

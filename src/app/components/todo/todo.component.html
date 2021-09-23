@@ -1,0 +1,6 @@
+<li draggable="true" (dragstart)="dragTodo($event)" id="{{i}}" class="shadow-sm" [ngClass]="t.urgent ? 'todo-1' : 'todo-2' " [class.completed]="t.completed" (click)="onItemClick()">
+    <span class="lead"  >   {{t.text}} </span> 
+    <button  class="editButton material-icons"  (click)="$event.stopPropagation()"  (click)="onClickedEdit()"> edit </button> 
+    <button class="delButton material-icons" (click)="$event.stopPropagation()" (click)="onClickedDelete()" > delete </button>
+ </li>
+ 

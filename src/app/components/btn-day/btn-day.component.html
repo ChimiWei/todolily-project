@@ -1,0 +1,5 @@
+<button 
+class="btn-day m-2" 
+[class.active]="activeDay === day" 
+(click)="emitDay()"  (dragover)="allowDrop($event)" (drop)="drop($event)" > {{day}}</button>
+

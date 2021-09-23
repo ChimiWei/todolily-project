@@ -1,0 +1,63 @@
+<li>
+    <ngb-accordion #acc="ngbAccordion" >
+      <ngb-panel id="{{painelId}}" title="Nova Tarefa">
+        <ng-template ngbPanelContent>
+          <form #form="ngForm" (ngSubmit)="OnFormsSubmit(form)" id="newTodo" class="form-group"> 
+            <div class="painelAdd"> 
+              <input class="inputText" ngModel #addTextField="ngModel" required name="text" type="text" placeholder="Adicionar tarefa..." > 
+              <select class="select" ngModel #select1="ngModel"  required name="urgent" style="margin-left: 10px;"  form="newTodo">
+                <option value="" hidden> Prioridade </option>
+                <option [ngValue]="true"> Urgente </option>
+                <option [ngValue]="false"> Normal </option>
+               
+              </select>
+              <select class="select" ngModel #select2="ngModel" required name="period" style="margin-left: 10px;" form="newTodo" >
+                <option value="" hidden> Periodo </option>
+                <option value="Manhã"> Manhã </option>
+                <option value="Tarde"> Tarde </option>
+                <option value="Noite"> Noite </option>
+              </select>
+              <select class="select" ngModel #select3="ngModel" required name="day" style="margin-left: 10px;" form="newTodo" >
+                <option value="" hidden> Dia da semana </option>
+                <option value="all"> Todos os dias </option>
+                <option value="seg"> Segunda </option>
+                <option value="ter"> Terça </option>
+                <option value="qua"> Quarta </option>
+                <option value="qui"> Quinta </option>
+                <option value="sex"> Sexta </option>
+                <option value="sab"> Sábado </option>
+                <option value="dom"> Domingo </option>
+              </select>
+              <button style="margin-left: 10px;" >
+                Adicionar
+              </button>
+            </div>
+
+            <!-- Checking empty inputs  -->
+            <div *ngIf="addTextField.invalid && validationErrors">
+              
+              <p class="help text-danger" > Por favor, preencha o campo.</p>
+  
+            </div>
+            <div *ngIf="addTextField.valid && validationErrors">
+              
+              <p class="help text-danger" *ngIf="select1.invalid" > Por favor, escolha a prioridade.</p>
+              
+            </div>
+            <div *ngIf="addTextField.valid && select1.valid && validationErrors">
+              
+              <p class="help text-danger" *ngIf="select2.invalid" > Por favor, escolha o período.</p>
+  
+            </div>
+            <div *ngIf="addTextField.valid && select1.valid && select2.valid && validationErrors">
+              
+              <p class="help text-danger" *ngIf="select3.invalid" > Por favor, escolha o dia da semana.</p>
+  
+            </div>
+  
+          </form>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </li>
+  

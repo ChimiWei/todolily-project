@@ -1,0 +1,236 @@
+.todo-1 {
+    display: flow-root;
+    flex-wrap: nowrap;
+    word-break: break-word;
+    background-color: rgb(197, 110, 247);
+    border: 1px solid rgba(143, 54, 54, 0.09);
+    border-radius: 65px; 
+    padding: 18px 18px; 
+    margin: 5px 0px;
+    max-width: 1000px;
+    height: fit-content;
+    transition: all 0.4s ease-in-out;
+    transition-property: margin, background-color, font-weight;
+
+    &.completed {
+        background-color: rgb(150, 150, 150);
+       
+        .lead {
+            font-weight: 300;
+
+        }
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
+    }
+
+    .lead {
+        font-weight: 600;
+    }
+
+   
+ }
+
+ .todo-2 {
+    display: flow-root;
+    flex-wrap: nowrap;
+    word-break: break-word;
+    border: 3px solid rgba(143, 54, 54, 0.09);
+    background-color: rgb(216, 157, 250);
+    border-radius: 65px;
+    padding: 11px 18px; 
+    margin: 7px 0px;
+    max-width: 800px;
+    transition: all 0.4s ease-in-out;
+    transition-property: margin, background-color, font-weight;
+
+      
+    &.completed {
+        background-color: rgb(150, 150, 150);
+        transition: all 0.4s ease-in-out;
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
+    }
+}
+
+ .todo-3 {
+    display: flex;
+    flex-wrap: nowrap;
+    border: 3px solid rgba(143, 54, 54, 0.09);
+    background-color: rgb(231, 190, 255);
+    border-radius: 65px;
+    padding: 5px 18px; 
+    margin: 8px 0px;
+    max-width: 600px;
+    transition: all 0.3s ease-in-out;
+
+      
+    &.completed {
+        transition: all 0.4s ease-in-out;
+        background-color: rgb(150, 150, 150);
+        .editButton {
+            opacity: 0 !important;
+            transform: translateY(10px)
+            
+        }
+    }
+}
+
+
+
+.lead {
+    text-shadow: 0px 0px  rgb(0, 0, 0);
+    color: rgb(2, 0, 2);
+}
+
+.delButton {
+    border: none;
+    background: none;
+    float: right;
+    transition: all 0.3s ease-in-out;
+
+}
+.editButton {
+    border: none;
+    background: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 20px;
+    position: relative;
+   top: 2px;
+   left: -2px; 
+}
+
+.cdk-drag-preview {
+  
+   
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+    
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .todo-1:last-child {
+    border: none;
+  }
+  
+ 
+  
+
+@media screen and (min-width: 600px) {
+    .editButton {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .delButton {
+        opacity: 0;
+    }
+
+
+    .todo-1:hover{
+        margin: 5px 6px;
+        cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+
+        .delButton {
+            opacity: 100;
+        }
+    }
+    .todo-2:hover{
+        margin: 7px 6px;
+        cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+        .delButton {
+            opacity: 100;
+        }
+    }
+
+    .todo-3:hover{
+        margin: 8px 6px;
+        cursor: pointer;
+        .editButton {
+            opacity: 100;
+            transform: translateY(0);
+        }
+        .delButton {
+            opacity: 100;
+        }
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 550px) {
+    .todo-1 {
+      display:flow-root;
+      flex-wrap: nowrap;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
+    }
+
+    .todo-2 {
+        display:flow-root;
+        flex-wrap: nowrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+      }
+
+      .todo-3 {
+        display:flow-root;
+       flex-wrap: nowrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+      }
+
+      .delButton {
+        float: right;
+        transform: translateY(4px);
+
+    }
+
+    .editButton {
+        margin-left: -8px;
+        transform: translateY(4px);
+    }
+
+
+}
+
+
+li {
+    list-style: none;
+}
+

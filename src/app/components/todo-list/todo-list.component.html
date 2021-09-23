@@ -1,0 +1,27 @@
+<section>
+
+    <div  class="container shadow mb-3 p-3 list-title" [ngClass]="setDarkMode ? 'bg-dark' : 'bg-body'" (drop)="drop($event)" (dragover)="allowDrop($event)" >
+    <div class="row p-3"> 
+    <div class="d-flex pb-3" > <i class="material-icons" [class]="icons"> {{icons}} </i> <h2 class="lead" [class.text-light]="setDarkMode">  {{period}} </h2> </div>
+    <ul >
+        
+    <app-todo 
+    *ngFor="let t of todo 
+    | callback: filterPeriod : period 
+    | callback: filterDay : showDay 
+    | sort: sortUrgent 
+    | sort: sortCompleted , 
+    let i = index " [i]="i" [t]="t" 
+    (todoClicked)="toggleCompleted(t)" 
+    (editClicked)="editTodo(t)" 
+    (deleteClicked)="deleteTodo(t)" > 
+    </app-todo>
+    
+        <app-btn-add [addDarkMode]="setDarkMode" [painelId]="painelId"></app-btn-add> 
+    </ul>
+    </div>
+    
+    </div>
+    
+    
+    </section>

@@ -1,0 +1,38 @@
+.btn-day {
+    font-weight: 400;
+    line-height: 1.9;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .65rem;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
+    background-color: rgba(114, 247, 200, 0.864);
+    transition: all 0.4s ease-in-out;
+    text-transform: capitalize;
+    &.active {
+    border: 1px solid rgba(141, 56, 127, 0.864);
+    
+    font-size: 1.2rem;
+    transform: translateY(-7px);
+       
+    }
+    
+}
+
+.btn-day:hover {
+    background-color: rgba(90, 211, 169, 0.864);
+    transform: translateY(-7px);
+
+    
+
+
+   
+    
+   
+}
