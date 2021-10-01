@@ -2,20 +2,39 @@ nav {
     background-color: #7353BA;
 }
 
+.test-h {
+    display: inline-flex;
+}
+
+
+
 .navbar-brand {
     font-size: 1.15rem;
+    
+   
+}
+
+.brand {
+    padding-left: 15px;
 }
 .nav-link {
     font-size: 0.9rem;
-    display: inline;
+    color: rgba(255,255,255,.55);
+    padding-top: 6px;
+    padding-left: 2px;
+    padding-right: 5px;
+    
+
+    
 }
 
 .nav-link:hover {
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.816);
 }
 
 .headernav {
-
+    
     @media (min-width: 600px) {
         
     }

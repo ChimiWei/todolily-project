@@ -10,5 +10,12 @@
 .btn-color {
     background-color: rgba(58, 255, 186, 0.864);
     float: right;
+    &:focus {
+        box-shadow: 0 0 0 0.0rem rgb(153, 240, 211);
+    }
+
+    &:hover {
+        background-color: rgba(58, 255, 186, 0.755);
+    }
 }
 
