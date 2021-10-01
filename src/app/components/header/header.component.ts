@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../../shared/data.service';
+import { FeaturesDialogComponent } from '../features-dialog/features-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   
 
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataService, private dialog: MatDialog) {
     
    }
 
@@ -31,6 +33,14 @@ export class HeaderComponent implements OnInit {
     this.nightMode = this.dataService.getNightMode()
     this.emitChangeMode()
 
+  }
+
+  openFeatures() {
+    
+    this.dialog.open(FeaturesDialogComponent, {
+      width: '700px',
+  
+    });
   }
 
 }

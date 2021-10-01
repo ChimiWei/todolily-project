@@ -15,6 +15,7 @@ import {NgbAccordionModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BtnDayComponent } from './components/btn-day/btn-day.component';
 import { SortPipe } from './shared/sort.pipe';
 import { CallbackPipe } from './shared/callback.pipe';
+import { FeaturesDialogComponent } from './components/features-dialog/features-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CallbackPipe } from './shared/callback.pipe';
     EditTodoDialogComponent,
     BtnDayComponent,
     CallbackPipe,
-    SortPipe
+    SortPipe,
+    FeaturesDialogComponent
   ],
   imports: [
     BrowserModule,
